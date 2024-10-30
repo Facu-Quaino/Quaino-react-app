@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navContainer{
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: burlywood;
+}
+
+.aLink{
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cartWidgetContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartIcon{
+  width: 3rem;
+}
+
+.cartCounter{
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.containerItemList{
+  position: relative;
+  background-color: blanchedalmond;
+  height: 40vh;
+}
+
+.mainTitle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
