@@ -1,13 +1,15 @@
 import CartWidget from "./CartWidget"
+import { NavLink } from "react-router-dom"
 
 const NavbarComponent =()=> {
     return(
         <nav className="navContainer">
-            <a href="" className="aLink">Atenea Indumentaria</a>
-            <a href="" className="aLink">Buzos</a>
-            <a href="" className="aLink">Camisetas</a>
-            <a href="" className="aLink">Pantalones</a>
-            <CartWidget counter ={15}/>
+            <NavLink className="aLink" to="/">Ecommerce</NavLink>
+            <NavLink className="aLink" to="/products/category1">item 1</NavLink>
+            <NavLink className="aLink" to="/products/category2">item 2</NavLink>
+            <NavLink className="aLink" to="/products/category3">item 3</NavLink>
+
+            <NavLink className="aLink" to="/cart"><CartWidget counter ={15}/></NavLink>
         </nav>
     )
 }

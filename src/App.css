@@ -1,9 +1,11 @@
+/*! reset*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/*! navbarcomponent*/
 .navContainer{
   width: 100%;
   padding: 2rem;
@@ -19,6 +21,7 @@
   text-decoration: none;
 }
 
+/*! cartwidget*/
 .cartWidgetContainer{
   display: flex;
   justify-content: space-between;
@@ -35,6 +38,7 @@
   font-weight: 500;
 }
 
+/*! itemlistcontainer*/
 .containerItemList{
   position: relative;
   background-color: blanchedalmond;
@@ -42,9 +46,58 @@
 }
 
 .mainTitle{
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/*! itemcount*/
+.itemCountMinus{
+  width: 2rem;
+  height: 2rem;
+}
+
+.itemCountPlus{
+  width: 2rem;
+  height: 2rem;
+}
+
+.itemCountCounter{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 2rem;
+  background-color: white;
+}
+
+.itemCountBuy{
+  padding: .6rem;
+}
+
+/*! ItemList*/
+.itemCardContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  margin: 25px 0;
+
+}
+
+/*! Item*/
+
+.itemCard{
+  display: flex;
+  flex-direction: column;
+  margin: 3px 2px;
+  border-radius: 4px;
+  text-align: center;
+  width: 210px;
+  height: 310px;
+  overflow: hidden;
+}
+
+.itemCardImg{
+  width: 200px;
 }
