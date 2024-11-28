@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={<ItemListContainer greeting = "Welcome to Marketplace.tf"/>}/>
         <Route path='/products/:category' element={<ItemListContainer greeting = "Category: "/>}/>
         <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+        <Route path='*' element={<Error/>}/>
       </Routes>
     </BrowserRouter>
   )
