@@ -14,7 +14,10 @@ const ItemCount =({stock, onAdd})=> {
             if(count > 0){
                 setCount(count - 1)
             }
+        }
 
+        const onAddHandler =()=>{
+            onAdd(count)
         }
 
     return(
@@ -24,7 +27,7 @@ const ItemCount =({stock, onAdd})=> {
                 <span className="itemCountCounter">{count}</span>
                 <button className="itemCountPlus" onClick={sumar}>+</button>
             </div>
-            <button className="itemCountBuy" onClick={()=> onAdd(count)} >Comprar!</button>
+            <button className="itemCountBuy" onClick={onAddHandler} disabled={count===0 || stock===0}>Comprar!</button>
         </div>
 
     )

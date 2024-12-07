@@ -1,8 +1,13 @@
-const CartWidget =({counter})=>{
+import { useContext } from "react"
+import { CartContext, useCart } from "../context/CartContext"
+
+const CartWidget =()=>{
+    const {cartQuantity} = useCart()
+
     return(
         <div className="cartWidgetContainer">
-            <img src="./shopping-cart.png" alt="cart" className="cartIcon"/>
-            <p className="cartCounter">{counter}</p>
+            <img src="../../public/shopping-cart.png" alt="cart" className="cartIcon"/>
+            {cartQuantity() > 0 && <p className="cartCounter">{cartQuantity()}</p>}
         </div>
     )
 }
