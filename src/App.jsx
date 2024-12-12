@@ -17,8 +17,8 @@ function App() {
         <NavbarComponent/>
 
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting = "Welcome to Marketplace.tf"/>}/>
-          <Route path='/products/:category' element={<ItemListContainer greeting = "Category: "/>}/>
+          <Route path='/' element={<ItemListContainer greeting = "Bienvenido a nuestra tienda"/>}/>
+          <Route path='/products/:category' element={<ItemListContainer greeting = "Categoria: "/>}/>
           <Route path='/item/:id' element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<CartView/>}/>
           <Route path='/checkout' element={<Checkout/>}/>

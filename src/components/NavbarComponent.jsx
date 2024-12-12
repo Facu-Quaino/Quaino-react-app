@@ -3,13 +3,15 @@ import { NavLink } from "react-router-dom"
 
 const NavbarComponent =()=> {
     return(
-        <nav className="navContainer">
-            <NavLink className="aLink" to="/">Ecommerce</NavLink>
-            <NavLink className="aLink" to="/products/Tools">Tools</NavLink>
-            <NavLink className="aLink" to="/products/Stranges">Stranges</NavLink>
-            <NavLink className="aLink" to="/products/Hats">Hats</NavLink>
+        <nav className="navbarComponent">
+            <NavLink className="logoLink" to="/"><img src="../../public/mainlogo.png" alt="logo principal" className="mainLogo"/></NavLink>
+            <div>
+                <NavLink className="aLink" to="/products/Abrigos">Abrigos</NavLink>
+                <NavLink className="aLink" to="/products/Camisetas">Camisetas</NavLink>
+                <NavLink className="aLink" to="/products/Pantalones">Pantalones</NavLink>
+            </div>
 
-            <NavLink className="aLink" to="/cart"><CartWidget counter ={15}/></NavLink>
+            <NavLink className="cartLink" to="/cart"><CartWidget counter ={15}/></NavLink>
         </nav>
     )
 }

@@ -6,18 +6,28 @@
 }
 
 /*! navbarcomponent*/
-.navContainer{
+.navbarComponent{
   width: 100%;
-  padding: 2rem;
+  padding-top: .6rem;
+  padding-bottom: .6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: burlywood;
+  background-color: black;
+  position:fixed ;
+  z-index: 1;
+}
+
+.mainLogo{
+  width: 10rem;
 }
 
 .aLink{
-  color: black;
-  font-weight: 500;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: system-ui;
+  color: white;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -29,29 +39,121 @@
 }
 
 .cartIcon{
-  width: 3rem;
+  color: white;
 }
 
 .cartCounter{
-  color: black;
+  color: white;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /*! itemlistcontainer*/
-.containerItemList{
-  position: relative;
-  background-color: blanchedalmond;
-  height: 40vh;
+.itemListContainer{
+  display: grid;
+  justify-content: center;
+}
+
+.titleContainer{
+  height: 75vh;
+  background-image: url("../public/banner.png") ;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .mainTitle{
+  text-transform: uppercase;
+  color: white;
+  -webkit-text-stroke: 3px black;
+  font-family: system-ui;
+  font-size: 3rem;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/*! ItemList*/
+.itemList{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 50vw;
+  row-gap: .5rem;
+  column-gap: .5rem;
+  text-align: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/*! Item*/
+
+.itemCard{
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid gray;
+  width: 200px;
+}
+
+.itemCardImg{
+  width: 200px;
+}
+
+.itemCardDesc{
+  background-color: black;
+  padding: 20px;
+  padding-bottom: 20px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.itemCardTitle{
+  color: white;
+  font-family: system-ui;
+  padding-bottom: 5px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.itemCardPrice{
+  color: white;
+  font-family: system-ui;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+
+.itemCardButton{
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  font-family: system-ui;
+  font-weight: 500;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  border-radius: .5rem;
+}
+
+/*! itemdetailcontainer*/
+.itemDetailContainer{
+  display: flex;
+  justify-content: center;
+}
+
+/*! itemdetail*/
+.itemDetail{
+  margin-top: 5rem;
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+}
+
 
 /*! itemcount*/
 .itemCountMinus{
@@ -75,29 +177,3 @@
   padding: .6rem;
 }
 
-/*! ItemList*/
-.itemCardContainer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  margin: 25px 0;
-
-}
-
-/*! Item*/
-
-.itemCard{
-  display: flex;
-  flex-direction: column;
-  margin: 3px 2px;
-  border-radius: 4px;
-  text-align: center;
-  width: 210px;
-  height: 310px;
-  overflow: hidden;
-}
-
-.itemCardImg{
-  width: 128px;
-}

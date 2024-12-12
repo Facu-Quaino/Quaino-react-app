@@ -8,7 +8,7 @@ const Item =({product})=> {
                 <div className="itemCardDesc">
                     <h5 className="itemCardTitle">{product.name}</h5>
                     <p className="itemCardPrice">${product.price}</p>
-                    <Link className="itemCardButton" to={`/item/${product.id}`}>More</Link>
+                    <Link className="itemCardButton" to={`/item/${product.id}`}>Ver mas</Link>
                 </div>
             </div>
             )}

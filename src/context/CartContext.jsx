@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -30,7 +31,25 @@ export const CartProvider =({children})=>{
     }
 
     const removeItem =(id)=>{
-        setCart(cart.filter((prod)=> prod.id !== id))
+        Swal.fire({
+                    title: "Esta seguro que desea eliminar este producto del carrito?",
+                    text: "No podra revertir estos cambios!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Borrar!",
+                    cancelButtonText: "Cancelar"
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                                setCart(cart.filter((prod)=> prod.id !== id))
+                                Swal.fire({
+                                title: "Borrado!",
+                                text: "El producto ha sido borrado.",
+                                icon: "success"
+                            });
+                        }
+                    });
     }
 
     const cartQuantity =()=>{

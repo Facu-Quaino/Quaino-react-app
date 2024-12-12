@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react"
-import { getProducts, productos } from "../mock/data"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
 import Loader from "./Loader"
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../services/firebase"
 
 const ItemListContainer =({greeting})=>{
@@ -35,25 +34,15 @@ const ItemListContainer =({greeting})=>{
             .finally(()=> setLoading(false))
     }, [category])
 
-    // useEffect(()=>{
-    //     setLoading(true)
-    //     getProducts()
-    //         .then((res) => {
-    //             if(category){
-    //                 setProducts(res.filter((product)=> product.category === category))
-    //             }else{
-    //                 setProducts(res)
-    //             }
-    //         })
-    //         .catch((error) => console.log(error))
-    //         .finally(()=> setLoading(false))
-    // }, [category])
-
     return(
-        <div className="containerItemList">
-            <h1 className="mainTitle">{greeting} <span>{category}</span> </h1>
+        <div>
+            <div className="titleContainer">
+                <h1 className="mainTitle">{greeting} <span>{category}</span> </h1>
+            </div>
 
-            {loading ? <Loader/>: <ItemList products = {products}/>} 
+            <div className="itemListContainer">
+                {loading ? <Loader/>: <ItemList products = {products}/>} 
+            </div>
         </div>
     )
 }

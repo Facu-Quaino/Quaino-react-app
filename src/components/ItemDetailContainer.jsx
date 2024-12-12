@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { getOneProduct, getProducts } from '../mock/data'
 import ItemDetail from './ItemDetail'
 import { useParams } from 'react-router-dom'
 import Loader from './Loader'
@@ -25,16 +24,8 @@ const ItemDetailContainer =()=> {
             .finally(()=> setLoading(false))
     }, [])
 
-    // useEffect(()=>{
-    //     setLoading(true)
-    //     getOneProduct(id)
-    //         .then((res)=>setProduct(res))
-    //         .catch((error)=> console.log(error))
-    //         .finally(()=> setLoading(false))
-    // },[])
-
     return(
-        <div>
+        <div className='itemDetailContainer'>
             {loading ? <Loader/> : <ItemDetail product = {product}/>}
         </div>
     )
