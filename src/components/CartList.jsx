@@ -14,8 +14,9 @@ const CartList =()=>{
             text: "No podra revertir estos cambios!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
+            confirmButtonColor: "black",
+            confirmButtonTextColor: "black",
+            cancelButtonColor: "black",
             confirmButtonText: "Borrar!",
             cancelButtonText: "Cancelar"
             }).then((result) => {
@@ -34,13 +35,13 @@ const CartList =()=>{
         <div>
             {cart.map((prod)=> <CartItem key={prod.id} prod={prod}/> )}
 
-            <span>Precio total: ${cartTotal()}</span>
-
-            <div className="cartListButtons">
-                <button className="cartDelete" onClick={clearCart}>Borrar Carrito!</button>
-                <Link className="cartBuy" to='/checkout'>Finalizar compra!</Link>
+            <div className="cartListTotal">
+                <span>Precio total: ${cartTotal()},00</span>
+                <div className="cartListButtons">
+                    <button className="cartDelete" onClick={clearCart}>Borrar Carrito!</button>
+                    <Link className="cartBuy" to='/checkout'>Finalizar compra!</Link>
+                </div>
             </div>
-            
         </div>
     )
 }

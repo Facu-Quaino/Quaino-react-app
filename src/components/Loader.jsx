@@ -4,7 +4,7 @@ import { BarLoader } from "react-spinners"
 const Loader =()=> {
     return(
         <div className="loader">
-            <BarLoader />
+            <BarLoader height={4} width={300} className="barLoader"/>
         </div>
     )
 }

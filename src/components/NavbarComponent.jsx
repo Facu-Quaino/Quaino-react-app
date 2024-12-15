@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 const NavbarComponent =()=> {
     return(
         <nav className="navbarComponent">
-            <NavLink className="logoLink" to="/"><img src="../../public/mainlogo.png" alt="logo principal" className="mainLogo"/></NavLink>
+            <NavLink className="logoLink" to="/"><img src="../mainlogo.png" alt="logo principal" className="mainLogo"/></NavLink>
             <div>
                 <NavLink className="aLink" to="/products/Abrigos">Abrigos</NavLink>
                 <NavLink className="aLink" to="/products/Camisetas">Camisetas</NavLink>

@@ -36,8 +36,8 @@ export const CartProvider =({children})=>{
                     text: "No podra revertir estos cambios!",
                     icon: "warning",
                     showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
+                    confirmButtonColor: "Black",
+                    cancelButtonColor: "Black",
                     confirmButtonText: "Borrar!",
                     cancelButtonText: "Cancelar"
                     }).then((result) => {

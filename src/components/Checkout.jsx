@@ -58,22 +58,22 @@ const Checkout =()=>{
     return(
         <div>
             {orderId !== ''
-            ? <div>
+            ? <div className="checkoutOrder">
                 <h4>Generaste tu orden!</h4>
                 <h5>order's ID: {orderId} </h5>
-                <Link to='/'>Volver a la pagina principal</Link>
+                <Link className="checkoutVolver" to='/'>Volver a la pagina principal</Link>
             </div>
             :
-            <div>
-            <h4>Complete el formulario</h4>
-            <form action="" onSubmit={finalizarCompra}>
-                <input type="text" name = 'name' placeholder="ingrese su nombre" onChange={userData}/>
-                <input type="text" name="lastname" placeholder="ingrese su apellido" onChange={userData}/>
-                <input type="text" name="address" placeholder="por favor ingrese su direccion" onChange={userData}/>
-                <input type="email" name="email" placeholder="ingrese su correo" onChange={userData}/>
-                <input type="email" name="email-confirmation" placeholder="confirme su correo electronico" onChange={(e)=> setValidate(e.target.value)}/>
-                <button type="submit">Enviar</button>
-            </form>
+            <div className="checkoutForm">
+                <h4>Complete el formulario</h4>
+                <form action="" onSubmit={finalizarCompra}>
+                    <input type="text" name = 'name' placeholder="Ingrese su nombre" onChange={userData}/>
+                    <input type="text" name="lastname" placeholder="Ingrese su apellido" onChange={userData}/>
+                    <input type="text" name="address" placeholder="Ingrese su direccion" onChange={userData}/>
+                    <input type="email" name="email" placeholder="Ingrese su correo" onChange={userData}/>
+                    <input type="email" name="email-confirmation" placeholder="Confirme su correo electronico" onChange={(e)=> setValidate(e.target.value)}/>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>}
         </div>
     )

@@ -10,7 +10,7 @@ const CartView =()=>{
         <div>
             {!cart.length 
                 ? <EmptyCart/>
-                : <div>
+                : <div className="cartView">
                     <h2>Tu carrito de compras!</h2>
                     <CartList/>
                 </div> 

@@ -21,10 +21,10 @@ const ItemCount =({stock, onAdd})=> {
         }
 
     return(
-        <div>
-            <div>
+        <div className="itemCount">
+            <div className="itemCountCounter">
                 <button className="itemCountMinus" onClick={restar}>-</button>
-                <span className="itemCountCounter">{count}</span>
+                <span className="itemCountNumber">{count}</span>
                 <button className="itemCountPlus" onClick={sumar}>+</button>
             </div>
             <button className="itemCountBuy" onClick={onAddHandler} disabled={count===0 || stock===0}>Comprar!</button>

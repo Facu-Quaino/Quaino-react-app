@@ -9,6 +9,7 @@ const ItemDetailContainer =()=> {
 
     const[product, setProduct] = useState({})
     const[loading, setLoading] = useState(false)
+    const[invalidItem, setInvalidItem] = useState(false)
     const {id} = useParams()
 
     useEffect(()=>{
@@ -19,11 +20,24 @@ const ItemDetailContainer =()=> {
         const docRef = doc(collectionProd, id)
         //traer el documento
         getDoc(docRef)
-            .then((res)=> setProduct({id: res.id, ...res.data()}))
+            .then((res)=> {
+                if(res.data()){
+                    setProduct({id: res.id, ...res.data()})
+                } else{
+                    setInvalidItem(true)
+                }
+                })
             .catch((error)=> console.log(error))
             .finally(()=> setLoading(false))
     }, [])
 
+    if(invalidItem){
+        return( 
+        <div>
+            <h3>El producto no existe</h3>
+            <Link to="/">Volver a la tienda</Link>
+        </div>)
+    }
     return(
         <div className='itemDetailContainer'>
             {loading ? <Loader/> : <ItemDetail product = {product}/>}

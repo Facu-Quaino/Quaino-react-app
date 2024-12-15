@@ -11,7 +11,10 @@ const ItemDetail =({product})=> {
 
     const onAdd = (cantidad) => {
         setCompra(true)
-        Swal.fire("Producto agregado al carrito!");
+        Swal.fire({
+            title: "Producto agregado al carrito!",
+            confirmButtonColor: "black"
+        });
 
         addToCart(product, cantidad)
     }
@@ -24,9 +27,9 @@ const ItemDetail =({product})=> {
             <div className='itemDetailText'>
                 <h1 className='itemDetailTitle'>{product.name}</h1>
                 <p className='itemDetailDesc'>{product.description}</p>
-                <p className='itemDetailPrice'>{product.price}</p>
+                <p className='itemDetailPrice'>${product.price}</p>
             {compra ? 
-                <div>
+                <div className='itemDetailPostCompra'>
                     <Link className='botonSeguirComprando' to="/">Seguir comprando!</Link>
                     <Link className='botonIrAlCarrito' to="/cart">Ir al carrito!</Link> 
                 </div> :
