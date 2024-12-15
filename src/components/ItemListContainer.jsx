@@ -36,12 +36,18 @@ const ItemListContainer =({greeting})=>{
 
     return(
         <div>
-            <div className="titleContainer">
-                <h1 className="mainTitle">{greeting} <span>{category}</span> </h1>
-            </div>
+
 
             <div className="itemListContainer">
-                {loading ? <Loader/>: <ItemList products = {products}/>} 
+                {loading 
+                ? <Loader/>
+                : <div className="ItemListBannerContainer">
+                    <div className="titleContainer">
+                        <h1 className="mainTitle">{greeting} <span>{category}</span> </h1>
+                    </div>
+                    <ItemList products = {products}/>
+                </div>            
+                } 
             </div>
         </div>
     )

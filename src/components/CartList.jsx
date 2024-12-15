@@ -25,6 +25,7 @@ const CartList =()=>{
                         Swal.fire({
                         title: "Borrado!",
                         text: "Su carrito ha sido borrado.",
+                        confirmButtonColor: "black",
                         icon: "success"
                     });
                 }

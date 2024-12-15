@@ -46,6 +46,7 @@ export const CartProvider =({children})=>{
                                 Swal.fire({
                                 title: "Borrado!",
                                 text: "El producto ha sido borrado.",
+                                confirmButtonColor: "black",
                                 icon: "success"
                             });
                         }
